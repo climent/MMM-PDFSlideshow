@@ -27,12 +27,12 @@ Module.register("MMM-PDFSlideshow", {
     this.sendSocketNotification("GET_PDF_LIST", this.config.pdfContainer);
 
     // Dynamically import PDF.js (ES module) from CDN.
-    import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs")
+    import("js/4.10.38/pdf.min.mjs")
       .then((pdfjsModule) => {
         this.pdfjsLib = pdfjsModule;
         // Set worker source using the corresponding worker link.
         this.pdfjsLib.GlobalWorkerOptions.workerSrc =
-          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+          "js/4.10.38/pdf.worker.min.mjs";
 
         // If a specific pdfPath is provided and it is a URL, download that PDF.
         if (this.config.pdfPath && this.config.pdfPath !== "") {
