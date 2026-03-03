@@ -27,7 +27,8 @@ Module.register("MMM-PDFSlideshow", {
     this.sendSocketNotification("GET_PDF_LIST", this.config.pdfContainer);
 
     // Dynamically import PDF.js (ES module) from CDN.
-    import("./js/5.4.54/pdf.min.mjs")
+    // import("./js/5.4.54/pdf.min.mjs")
+    import("./js/5.5.207/pdf.min.mjs")
       .then((pdfjsModule) => {
         this.pdfjsLib = pdfjsModule;
         // Set worker source using the corresponding worker link.
